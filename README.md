@@ -31,39 +31,39 @@ hemos usado una función propia que limpia las clases de los temas y
 aplica la elegida.
 
 ```javascript
-    $("#theme-switcher").dialog({
-        autoOpen: false,
-        show: {
-            effect: "blind",
-            duration: 1000
-        },
-        hide: {
-            effect: "explode",
-            duration: 1000
-        }
-    });
-    
-    $("#thsw").on("click", function () {
-        $("#theme-switcher").dialog("open");
-    });
-    
-    $("#sw-atalgaba").on("click", function () {
-        themeSwitch('atalgaba')
-    });
-    $("#sw-light").on("click", function () {
-        themeSwitch('light')
-    });
-    $("#sw-dark").on("click", function () {
-        themeSwitch('dark')
-    });
-    
-    function themeSwitch(newClass) {
-        var body = $('body');
-        body.removeClass("atalgaba");
-        body.removeClass("light");
-        body.removeClass("dark");
-        body.addClass(newClass);
+$("#theme-switcher").dialog({
+    autoOpen: false,
+    show: {
+        effect: "blind",
+        duration: 1000
+    },
+    hide: {
+        effect: "explode",
+        duration: 1000
     }
+});
+
+$("#thsw").on("click", function () {
+    $("#theme-switcher").dialog("open");
+});
+
+$("#sw-atalgaba").on("click", function () {
+    themeSwitch('atalgaba')
+});
+$("#sw-light").on("click", function () {
+    themeSwitch('light')
+});
+$("#sw-dark").on("click", function () {
+    themeSwitch('dark')
+});
+
+function themeSwitch(newClass) {
+    var body = $('body');
+    body.removeClass("atalgaba");
+    body.removeClass("light");
+    body.removeClass("dark");
+    body.addClass(newClass);
+}
 ```
 
 ## Tarea 2 - Widget Autocomplete
@@ -74,16 +74,16 @@ array ha sido generado gracias a una API que nos devuelve un JSON con la
 información de todos estos Pokémons.
 
 ```javascript
-    $.getJSON("https://raw.githubusercontent.com/cheeaun/repokemon/master/data/pokemon-list.json", function (data) {
-        var items = [];
-        $.each(data, function (id, pokemon) {
-            items.push(pokemon.name);
-        });
-    
-        $("#pokemon").autocomplete({
-            source: items
-        });
+$.getJSON("https://raw.githubusercontent.com/cheeaun/repokemon/master/data/pokemon-list.json", function (data) {
+    var items = [];
+    $.each(data, function (id, pokemon) {
+        items.push(pokemon.name);
     });
+
+    $("#pokemon").autocomplete({
+        source: items
+    });
+});
 ```
 
 ## Tarea 3 - Widget Datepicker
@@ -105,16 +105,16 @@ selector de temas. A la hora de mostrarse lo hará con un efecto _blind_
 con una duración de medio segundo mientras que para cerrarse lo hará con
 un efecto _explode_ con duración de 1 segundo.
 
-````javascript
-    $("#theme-switcher").dialog({
-        autoOpen: false,
-        show: {
-            effect: "blind",
-            duration: 1000
-        },
-        hide: {
-            effect: "explode",
-            duration: 1000
-        }
-    });
+```javascript
+$("#theme-switcher").dialog({
+    autoOpen: false,
+    show: {
+        effect: "blind",
+        duration: 1000
+    },
+    hide: {
+        effect: "explode",
+        duration: 1000
+    }
+});
 ```
