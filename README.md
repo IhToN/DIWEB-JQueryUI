@@ -102,8 +102,8 @@ y viceversa.
 
 En este caso hemos añadido dos efectos distintos en el Dialog del
 selector de temas. A la hora de mostrarse lo hará con un efecto _blind_
-con una duración de 1 segundo mientras que para cerrarse lo hará con un
-efecto _explode_ también con duración de 1 segundo.
+con una duración de medio segundo mientras que para cerrarse lo hará con
+un efecto _explode_ con duración de 1 segundo.
 
 ````javascript
     $("#theme-switcher").dialog({
