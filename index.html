@@ -11,35 +11,189 @@
               integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
               crossorigin="anonymous">
 
+        <link rel="stylesheet" href="https://bootswatch.com/4/lumen/bootstrap.min.css">
         <link rel="stylesheet" href="themes/atalgaba/jquery-ui.structure.css">
+        <link rel="stylesheet" href="themes/atalgaba/jquery-ui.theme.css">
+        <link rel="stylesheet" href="themes/light/jquery-ui.structure.css">
+        <link rel="stylesheet" href="themes/light/jquery-ui.theme.css">
+        <link rel="stylesheet" href="themes/dark/jquery-ui.structure.css">
+        <link rel="stylesheet" href="themes/dark/jquery-ui.theme.css">
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body class="atalgaba">
-        <header class="d-block container-fluid">
-            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-                <a class="navbar-brand" href="#">Fixed navbar</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#">Disabled</a>
-                        </li>
-                    </ul>
-                    <form class="form-inline mt-2 mt-md-0">
-                        <input id="search" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                    </form>
-                </div>
+        <header role="banner">
+            <nav id="navbar-primary" class="navbar bg-dark" role="navigation">
+                <a href="index.html" class="d-block mx-auto">
+                    <img id="logo-navbar-middle" src="img/logo.png" height="98" width="357" alt="PokéRent">
+                </a>
             </nav>
         </header>
+
+        <div id="topCrsl" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="1" class=""></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="2" class=""></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide"
+                         alt="First slide [800x400]"
+                         src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_161e809b18e%20text%20%7B%20fill%3A%23555%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A40pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_161e809b18e%22%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22285.9296875%22%20y%3D%22217.75625%22%3EFirst%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+                         data-holder-rendered="true">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>First slide label</h5>
+                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=666&amp;fg=444&amp;text=Second slide"
+                         alt="Second slide [800x400]"
+                         src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_161e809b190%20text%20%7B%20fill%3A%23444%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A40pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_161e809b190%22%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20fill%3D%22%23666%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22247.3203125%22%20y%3D%22217.75625%22%3ESecond%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+                         data-holder-rendered="true">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Second slide label</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100"
+                         data-src="holder.js/800x400?auto=yes&amp;bg=555&amp;fg=333&amp;text=Third slide"
+                         alt="Third slide [800x400]"
+                         src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_161e809b191%20text%20%7B%20fill%3A%23333%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A40pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_161e809b191%22%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20fill%3D%22%23555%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22277.0078125%22%20y%3D%22217.75625%22%3EThird%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+                         data-holder-rendered="true">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Third slide label</h5>
+                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#topCrsl" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#topCrsl" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Siguiente</span>
+            </a>
+        </div>
+
+        <div class="container main-content p-5">
+            <div class="row">
+                <form class="needs-validation mx-auto" action="" novalidate>
+                    <div class="form-row">
+                        <div class="input-group col-md-4 mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="name">Nombre</span>
+                            </div>
+                            <input type="text" class="form-control" id="nombre" placeholder="Nombre"
+                                   required aria-describedby="name">
+                            <div class="valid-tooltip">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="input-group col-md-4 mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="surname">Pr. Apellido</span>
+                            </div>
+                            <input type="text" class="form-control" id="apellido1" placeholder="Primer Apellido"
+                                   required aria-describedby="surname">
+                            <div class="valid-tooltip">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="input-group col-md-4 mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="surnamee">Sg. Apellido</span>
+                            </div>
+                            <input type="text" class="form-control" id="apellido2" placeholder="Segundo Apellido"
+                                   required aria-describedby="surnamee">
+                            <div class="valid-tooltip">
+                                Looks good!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row mb-2">
+                        <div class="input-group col-md-6 mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="mail"><i class="far fa-envelope"></i></span>
+                            </div>
+                            <input type="text" class="form-control" id="email" placeholder="Correo Electrónico"
+                                   required aria-describedby="surname">
+                            <div class="valid-tooltip">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="input-group col-md-6 mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="phone"><i class="fas fa-phone-square"></i></span>
+                            </div>
+                            <input type="text" class="form-control" id="telefono" placeholder="Teléfono"
+                                   required aria-describedby="phone">
+                            <div class="valid-tooltip">
+                                Looks good!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="input-group col-md-4 mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="pokename"><i class="fab fa-earlybirds"></i></span>
+                            </div>
+                            <input type="text" class="form-control" id="pokemon" placeholder="Pokémon"
+                                   required aria-describedby="pokename">
+                        </div>
+                        <div class="input-group col-md-4 mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="calstart"><i class="far fa-calendar-plus"></i></span>
+                            </div>
+                            <input type="text" class="form-control" id="calinicio" placeholder="Fecha de Recogida"
+                                   required aria-describedby="calstart">
+                        </div>
+                        <div class="input-group col-md-4 mb-3">
+                            <input type="text" class="form-control" id="calfin" placeholder="Fecha de Entrega"
+                                   required aria-describedby="calend">
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="calend"><i class="far fa-calendar-times"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row float-right mb-1">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="tocs">
+                            <label class="form-check-label" for="tocs">
+                                Acepto los <em>Términos y Condiciones</em> de PokéRent
+                            </label>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="form-row float-right">
+                        <button id="thsw" class="btn btn-primary btn-lg mr-md-1" type="button">Cambiar Tema</button>
+                        <button class="btn btn-success btn-lg mr-md-1" type="submit">Reservar Pokémon</button>
+                        <button class="btn btn-danger btn-lg" type="reset">Limpiar Formulario</button>
+                    </div>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+        </div>
+
+        <div id="theme-switcher" title="Elegir Tema">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <a id="sw-atalgaba"><img class="d-block w-100" src="img/th-atalgaba.png"/></a>
+                    </div>
+                    <div class="col-md-4">
+                        <a id="sw-light"><img class="d-block w-100" src="img/th-light.png"/></a>
+                    </div>
+                    <div class="col-md-4">
+                        <a id="sw-dark"><img class="d-block w-100" src="img/th-dark.png"/></a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
@@ -49,6 +203,7 @@
                 integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
                 crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
         <script src="js/custom.js"></script>
     </body>
 </html>
