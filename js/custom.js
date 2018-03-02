@@ -17,13 +17,13 @@ $(document).ready(function () {
         });
 
         $("#sw-atalgaba").on("click", function () {
-            callback('atalgaba')
+            themeSwitch('atalgaba')
         });
         $("#sw-light").on("click", function () {
-            callback('light')
+            themeSwitch('light')
         });
         $("#sw-dark").on("click", function () {
-            callback('dark')
+            themeSwitch('dark')
         });
 
         /* Autocomplete */
@@ -75,13 +75,12 @@ $(document).ready(function () {
 );
 
 /* Theme Switcher */
-function callback(newClass) {
+function themeSwitch(newClass) {
     var body = $('body');
     body.removeClass("atalgaba");
     body.removeClass("light");
     body.removeClass("dark");
     body.addClass(newClass);
-
 }
 
 /* Inicialización en español para la extensión 'UI date picker' para jQuery. */
