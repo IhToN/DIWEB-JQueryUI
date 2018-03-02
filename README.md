@@ -73,16 +73,33 @@ con todos los Pokémons que existen actualmente (un total de 802). Dicho
 array ha sido generado gracias a una API que nos devuelve un JSON con la
 información de todos estos Pokémons.
 
+Además, hemos añadido la opción de que al seleccionar un pokémon
+concreto, la medalla del input group muestre la imagen del pokémon
+elegido, pudiendo así obtener una previsualización de la selección.
+
 ```javascript
 $.getJSON("https://raw.githubusercontent.com/cheeaun/repokemon/master/data/pokemon-list.json", function (data) {
     var items = [];
     $.each(data, function (id, pokemon) {
-        items.push(pokemon.name);
+        items.push({value: pokemon.name.toLowerCase(), id: pokemon.id, name: pokemon.name});
     });
 
     $("#pokemon").autocomplete({
-        source: items
-    });
+        source: items,
+        focus: function (event, ui) {
+            $("#pokemon").val(ui.item.name);
+            return false;
+        },
+        select: function (event, ui) {
+            console.log('seleccionado el pokemon', ui.item.id);
+            $('#pokename').html('<img src="https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/' + ui.item.id + '.png?raw=true" style="width:100%;position:absolute; top:50%; left:50%; transform: translate(-50%, -50%);" />');
+            return false;
+        }
+    }).autocomplete("instance")._renderItem = function (ul, item) {
+        return $("<li>")
+            .append("<div>" + item.name + "</div>")
+            .appendTo(ul);
+    };
 });
 ```
 

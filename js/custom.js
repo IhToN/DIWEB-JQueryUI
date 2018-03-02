@@ -30,12 +30,25 @@ $(document).ready(function () {
         $.getJSON("https://raw.githubusercontent.com/cheeaun/repokemon/master/data/pokemon-list.json", function (data) {
             var items = [];
             $.each(data, function (id, pokemon) {
-                items.push(pokemon.name);
+                items.push({value: pokemon.name.toLowerCase(), id: pokemon.id, name: pokemon.name});
             });
 
             $("#pokemon").autocomplete({
-                source: items
-            });
+                source: items,
+                focus: function (event, ui) {
+                    $("#pokemon").val(ui.item.name);
+                    return false;
+                },
+                select: function (event, ui) {
+                    console.log('seleccionado el pokemon', ui.item.id);
+                    $('#pokename').html('<img src="https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/' + ui.item.id + '.png?raw=true" style="width:100%;position:absolute; top:50%; left:50%; transform: translate(-50%, -50%);" />');
+                    return false;
+                }
+            }).autocomplete("instance")._renderItem = function (ul, item) {
+                return $("<li>")
+                    .append("<div>" + item.name + "</div>")
+                    .appendTo(ul);
+            };
         });
 
         /* Calendar Date Picker */
