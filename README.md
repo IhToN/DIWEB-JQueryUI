@@ -59,9 +59,11 @@ $("#sw-dark").on("click", function () {
 
 function themeSwitch(newClass) {
     var body = $('body');
+    // quitamos todas las clases
     body.removeClass("atalgaba");
     body.removeClass("light");
     body.removeClass("dark");
+    // añadimos la clase nueva
     body.addClass(newClass);
 }
 ```
@@ -91,8 +93,8 @@ $.getJSON("https://raw.githubusercontent.com/cheeaun/repokemon/master/data/pokem
             return false;
         },
         select: function (event, ui) {
-            console.log('seleccionado el pokemon', ui.item.id);
             $('#pokename').html('<img src="https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/' + ui.item.id + '.png?raw=true" style="width:100%;position:absolute; top:50%; left:50%; transform: translate(-50%, -50%);" />');
+                // añadimos la imagen del pokemon al lateral del input
             return false;
         }
     }).autocomplete("instance")._renderItem = function (ul, item) {
@@ -120,6 +122,38 @@ anterior al día de hoy y por ende la de finalización anterior a mañana.
 Así como el alquiler mínimo será siempre de un día, nunca podremos
 elegir el mismo día como recogida y devolución.
 
+```javascript
+var today = new Date();         // Inicializamos el día de hoy
+var dateFormat = "dd/mm/yy",    // Especificamos nuestro formato de fecha
+    from = $("#calinicio")
+        .datepicker({
+            defaultDate: "+1d",
+            changeMonth: true,
+            numberOfMonths: 1,
+            dateFormat: dateFormat,
+            minDate: today      // Elegimos como fecha mínima Hoy
+        })
+        .on("change", function () {
+            to.datepicker("option", "minDate", new Date(getDate(this).getTime() + 86400000));
+                                // Cambiamos la fecha mínima de entrega
+                                // al día siguiente al elegido
+        }),
+    to = $("#calfin")
+        .datepicker({
+            defaultDate: "+3d",
+            changeMonth: true,
+            numberOfMonths: 1,
+            dateFormat: dateFormat,
+            minDate: new Date(today.getTime() + 86400000)
+                                // Elegimos como fecha mínima Mañana
+        })
+        .on("change", function () {
+            from.datepicker("option", "maxDate", new Date(getDate(this).getTime() - 86400000));
+                                // Cambianos la fecha máxima de regocida
+                                // al día anterior al elegido
+        });
+```
+
 ## Tarea 4 - Efectos de JqueryUI
 
 En este caso hemos añadido dos efectos distintos en el Dialog del
@@ -130,10 +164,12 @@ un efecto _explode_ con duración de 1 segundo.
 ```javascript
 $("#theme-switcher").dialog({
     autoOpen: false,
+    // elegimos el efecto y la duración de aparición
     show: {
         effect: "blind",
         duration: 1000
     },
+    // elegimos el efecto y la duración de cierre
     hide: {
         effect: "explode",
         duration: 1000
