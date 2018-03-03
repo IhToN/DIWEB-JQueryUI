@@ -115,6 +115,11 @@ sólo por los textos sino también en el formato de fecha. Además nos
 limitará elegir fechas de finalización anteriores a las fechas de inicio
 y viceversa.
 
+Además controlamos gracias a minDate que la fecha de inicio no pueda ser
+anterior al día de hoy y por ende la de finalización anterior a mañana.
+Así como el alquiler mínimo será siempre de un día, nunca podremos
+elegir el mismo día como recogida y devolución.
+
 ## Tarea 4 - Efectos de JqueryUI
 
 En este caso hemos añadido dos efectos distintos en el Dialog del

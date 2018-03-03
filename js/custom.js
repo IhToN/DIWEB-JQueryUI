@@ -52,23 +52,27 @@ $(document).ready(function () {
 
         /* Calendar Date Picker */
         $.datepicker.setDefaults($.datepicker.regional["es"]);
+        var today = new Date();
         var dateFormat = "dd/mm/yy",
             from = $("#calinicio")
                 .datepicker({
-                    defaultDate: "+1w",
+                    defaultDate: "+1d",
                     changeMonth: true,
-                    numberOfMonths: 2,
-                    dateFormat: dateFormat
+                    numberOfMonths: 1,
+                    dateFormat: dateFormat,
+                    minDate: today
                 })
                 .on("change", function () {
-                    to.datepicker("option", "minDate", getDate(this));
+                    to.datepicker("option", "minDate", new Date(getDate(this).getTime() + 86400000));
                 }),
-            to = $("#calfin").datepicker({
-                defaultDate: "+1w",
-                changeMonth: true,
-                numberOfMonths: 2,
-                dateFormat: dateFormat
-            })
+            to = $("#calfin")
+                .datepicker({
+                    defaultDate: "+3d",
+                    changeMonth: true,
+                    numberOfMonths: 1,
+                    dateFormat: dateFormat,
+                    minDate: new Date(today.getTime() + 86400000)
+                })
                 .on("change", function () {
                     from.datepicker("option", "maxDate", getDate(this));
                 });
@@ -116,7 +120,7 @@ function themeSwitch(newClass) {
         currentText: "Hoy",
         monthNames: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
             "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
-        monthNamesShort: ["Ene", "Feb", "Mar", "abr", "May", "Jun",
+        monthNamesShort: ["Ene", "Feb", "Mar", "Abr", "May", "Jun",
             "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"],
         dayNames: ["domingo", "lunes", "Martes", "miércoles", "jueves", "viernes", "sábado"],
         dayNamesShort: ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"],
