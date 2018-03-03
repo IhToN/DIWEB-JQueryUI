@@ -1,5 +1,6 @@
 body {
     background: url('../img/pokebg.png') no-repeat center top;
+    background-size: cover;
 }
 
 a {
@@ -10,9 +11,13 @@ a:hover img {
     filter: brightness(85%);
 }
 
-.carousel .carousel-item img {
-    max-height: 200px;
-    min-width: auto;
+#navbar-primary img {
+    max-width: 200px;
+}
+
+.carousel .carousel-item {
+    max-height: 275px;
+    width: auto;
 }
 
 .main-content {

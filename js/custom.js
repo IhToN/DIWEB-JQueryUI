@@ -40,7 +40,6 @@ $(document).ready(function () {
                     return false;
                 },
                 select: function (event, ui) {
-                    console.log('seleccionado el pokemon', ui.item.id);
                     $('#pokename').html('<img src="https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/' + ui.item.id + '.png?raw=true" style="width:100%;position:absolute; top:50%; left:50%; transform: translate(-50%, -50%);" />');
                     return false;
                 }
