@@ -74,7 +74,7 @@ $(document).ready(function () {
                     minDate: new Date(today.getTime() + 86400000)
                 })
                 .on("change", function () {
-                    from.datepicker("option", "maxDate", getDate(this));
+                    from.datepicker("option", "maxDate", new Date(getDate(this).getTime() - 86400000));
                 });
 
         function getDate(element) {
