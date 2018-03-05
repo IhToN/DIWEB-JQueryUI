@@ -94,6 +94,7 @@ $(document).ready(function () {
             max: 10
         });
 
+        $('#vibrar').tooltip();
         $('#vibrar').click(efectoUno);
     }
 );
